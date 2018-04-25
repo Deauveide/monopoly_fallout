@@ -15,13 +15,26 @@ h1{
 
 .div_form{
 	padding-top: 2%;
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 30%;
+	padding-right: 30%;
+}
+
+.div_bg{
+	-webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    width: 100%;
+    height: 60%;
+    border: none;
+    -webkit-border-radius: 0 60px 0 0;
+    border-radius: 0 60px 0 0;
+    color: rgba(255,255,255,1);
+    text-align: center;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    background: rgba(151,175,191,0.76);
 }
 
 .center{
-text-align: center;
-}
-.padding_up{
-	padding-top: 6%;
+	text-align: center;
 }
