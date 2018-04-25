@@ -25,6 +25,16 @@ def eliminarUsuario(usrName):
     con_usr.commit()
 
 
+def cambiarPass(usrName, pswd, newPswd):
+    par=(usrName)
+    cursor.execute("SELECT password FROM users WHERE username=?", par)
+    registro = cursor.fetchone()
+    if(pswd==registro[0]):
+        values = (newPswd, par, )
+        cursor.execute("UPDATE users SET password=? WHERE username=?", values)
+        con_usr.commit()
+        
+
 def verDB():
     cursor.execute("SELECT * FROM users")
     for registro in cursor:
