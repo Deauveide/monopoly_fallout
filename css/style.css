@@ -9,17 +9,19 @@ h1{
 	text-align: center;
 }
 
-.container {
-    position: relative;
-}
-
 .div_form{
 	padding-top: 2%;
 	padding-left: 30%;
 	padding-right: 30%;
 }
 
+.div_pad_inputs{
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
 .div_bg{
+	display: table;
 	-webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
@@ -35,6 +37,11 @@ h1{
     background: rgba(151,175,191,0.76);
 }
 
-.center{
+.centrar{
 	text-align: center;
+}
+
+.centrar_v{
+	display: table-cell;
+	vertical-align: middle;
 }
