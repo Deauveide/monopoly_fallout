@@ -1,7 +1,4 @@
 body {
-    background-image: url(../images/stand_by.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
     padding: 15px;
 }
 
@@ -32,6 +29,19 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #45a049;
+}
+
+video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: fixed;    
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%); 
+  z-index: -100;
+  background-size: cover;
 }
 
 .div_form{
