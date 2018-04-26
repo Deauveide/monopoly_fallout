@@ -13,6 +13,7 @@
 	</div>
 	<div class="centrar div_form">
 		<div class="div_bg">
+			{% block body %}
 			<form class="centrar_v padding_side">
 				<div class="div_pad_inputs">
 					<input type="text" name="usuario" placeholder="Nombre de usuario" required>
@@ -24,9 +25,10 @@
 					<input type="password" name="password" placeholder="Contraseña" required>
 				</div>
 				<div class="div_pad_inputs">
-					<input type="submit" value="Registrarse">
+					<input type="submit" name="boton" value="Registrarse">
 				</div>
 			</form>
+			{% endblock %}
 		</div>
 		<hr  width="100%" noshade>
 		<div style="float:left; width: 50%;">
