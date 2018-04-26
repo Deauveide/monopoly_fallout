@@ -41,8 +41,8 @@ input[type=submit]:hover {
 }
 
 .div_pad_inputs{
-	padding-top: 4%;
-	padding-bottom: 4%;
+	padding-top: 2%;
+	padding-bottom: 2%;
 }
 
 .div_bg{
@@ -63,8 +63,8 @@ input[type=submit]:hover {
 }
 
 .padding_side{
-	padding-left: 10%;
-	padding-right: 10%;
+	padding-left: 15%;
+	padding-right: 15%;
 }
 
 .centrar{
@@ -74,4 +74,8 @@ input[type=submit]:hover {
 .centrar_v{
 	display: table-cell;
 	vertical-align: middle;
+}
+
+.in_line{
+	display: inline-block;
 }
