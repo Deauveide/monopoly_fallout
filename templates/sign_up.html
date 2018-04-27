@@ -13,7 +13,6 @@
 	</div>
 	<div class="centrar div_form">
 		<div class="div_bg">
-			{% block body %}
 			<form class="centrar_v padding_side">
 				<div class="div_pad_inputs">
 					<input type="text" name="usuario" placeholder="Nombre de usuario" required>
@@ -28,17 +27,16 @@
 					<input type="submit" name="boton" value="Registrarse">
 				</div>
 			</form>
-			{% endblock %}
 		</div>
 		<hr  width="100%" noshade>
 		<div style="float:left; width: 50%;">
-			<form method="link" action="index.html">
-				<input type="submit" style="background-color: #48DCEE; width: 90%;" value="Iniciar sesión">
+			<form form_action="" method="post">
+				<input type="submit" name="boton" style="background-color: #48DCEE; width: 90%;" value="Iniciar sesión">
 			</form>
 		</div>
 		<div style="float:left; width: 50%; text-align: center;">
-			<form method="link" action="forget.html">
-				<input type="submit" style="background-color: #EEAC48; width: 90%;" value="Olvide mi contraseña">
+			<form form_action="" method="post">
+				<input type="submit" name="boton" style="background-color: #EEAC48; width: 90%;" value="Contraseña">
 			</form>
 		</div>
 	</div>
