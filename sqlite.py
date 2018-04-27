@@ -16,6 +16,17 @@ def crearTabla():
         email VARCHAR(40) UNIQUE);"
         )
 
+def validarUsuario(usrName):
+    cursor.execute("SELECT username FROM users")
+    
+    for i in cursor:
+        if(i[0]==usrName):
+            return True
+    cursor.execute("SELECT email FROM users")
+    for i in cursor:
+        if(i[0]==usrName):
+            return True
+    return False
 
 def añadirUsuario(usrName, pswd, email):
     """

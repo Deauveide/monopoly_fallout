@@ -1,9 +1,11 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Monopoly de fallout</title>
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
+{% block body %}
 <body>
 	<video id="video" autoplay="autoplay" loop="loop" preload="auto">
   		<source src="../static/stand_video.ogv" type="video/ogg"></source>
@@ -13,7 +15,7 @@
 	</div>
 	<div class="centrar div_form">
 		<div class="div_bg">
-			<form class="centrar_v padding_side">
+			<form class="centrar_v padding_side" form_action="" method="post">
 				<div class="div_pad_inputs">
 					<input type="text" name="usuario" placeholder="Nombre de usuario" required>
 				</div>
@@ -41,4 +43,5 @@
 		</div>
 	</div>
 </body>
+{% endblock %}
 </html>

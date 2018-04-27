@@ -13,6 +13,12 @@ def index():
             return redirect(url_for('forget'))
         elif request.form['boton'] == "Registrarse":
             return redirect(url_for('sign_up'))
+        elif request.form['boton'] == "Entrar":
+            usr = request.form['usuario']
+            pswd = request.form['password']
+            if(sqlite.validarUsuario(usr)):
+                print("Accediendo")
+                return redirect(url_for('monopoly'))
     else:
         return render_template('index.html')
     
@@ -33,6 +39,12 @@ def sign_up():
             return redirect(url_for('index'))
         elif request.form['boton'] == "Contraseña":
             return redirect(url_for('forget'))
+        elif request.form['boton'] == "Registrarse":
+            usr = request.form['usuario']
+            pswd = request.form['password']
+            email = request.form['email']
+            sqlite.añadirUsuario(usr, pswd, email)
+            return redirect(url_for('index'))
     else:
         return render_template('sign_up.html')
     """
@@ -44,6 +56,9 @@ def sign_up():
             print(usuario)
             return redirect(url_for('pagina_principal'))
     """
+
+def monopoly():
+    return render_template('monopoly.html')
     
 if __name__ == '__main__':
     app.run(port=8080)
