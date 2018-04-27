@@ -2,14 +2,14 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Monopoly de fallout</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 	<video id="video" autoplay="autoplay" loop="loop" preload="auto">
-  		<source src="images/stand_video.ogv" type="video/ogg"></source>
+  		<source src="../static/stand_video.ogv" type="video/ogg"></source>
 	</video>
 	<div class="centrar">
-		<img src="images/contraseña.png">
+		<img src="../static/contraseña.png">
 	</div>
 	<div class="centrar div_form">
 		<div class="div_bg">

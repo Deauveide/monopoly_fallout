@@ -2,35 +2,38 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Monopoly de fallout</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 	<video id="video" autoplay="autoplay" loop="loop" preload="auto">
-  		<source src="images/stand_video.ogv" type="video/ogg"></source>
+  		<source src="../static/stand_video.ogv" type="video/ogg"></source>
 	</video>
 	<div class="centrar">
-		<img src="images/login_fallout.png">
+		<img src="../static/registro.png">
 	</div>
 	<div class="centrar div_form">
 		<div class="div_bg">
-			<!-- {% block body %} -->
-			<form class="centrar_v padding_side" form action="" method="post">
+			{% block body %}
+			<form class="centrar_v padding_side">
 				<div class="div_pad_inputs">
-					<input type="text" name="usuario" placeholder="Usuario o correo" required>
+					<input type="text" name="usuario" placeholder="Nombre de usuario" required>
+				</div>
+				<div class="div_pad_inputs">
+					<input type="email" name="email" placeholder="Correo electronico" required>
 				</div>
 				<div class="div_pad_inputs">
 					<input type="password" name="password" placeholder="Contraseña" required>
 				</div>
 				<div class="div_pad_inputs">
-					<input type="submit" name="boton" value="Entrar">
+					<input type="submit" name="boton" value="Registrarse">
 				</div>
 			</form>
-			<!-- {% endblock %} -->
+			{% endblock %}
 		</div>
 		<hr  width="100%" noshade>
 		<div style="float:left; width: 50%;">
-			<form method="link" action="sign_up.html">
-				<input type="submit" style="background-color: #48DCEE; width: 90%;" value="Registrarse">
+			<form method="link" action="index.html">
+				<input type="submit" style="background-color: #48DCEE; width: 90%;" value="Iniciar sesión">
 			</form>
 		</div>
 		<div style="float:left; width: 50%; text-align: center;">
