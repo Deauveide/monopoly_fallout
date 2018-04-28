@@ -6,6 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 {% block body %}
+
+{% if error == "usuarioExist" %}
+	<script type="text/javascript">
+		alert("El usuario ya existe");
+	</script>
+{% endif %}
+
 <body>
 	<video id="video" autoplay="autoplay" loop="loop" preload="auto">
   		<source src="../static/stand_video.ogv" type="video/ogg"></source>

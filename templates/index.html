@@ -6,6 +6,17 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 {% block body %}
+
+{% if error == "usuario!exist" %}
+	<script type="text/javascript">
+		alert("El usuario no existe");
+	</script>
+{% elif error== "pswdIncorrecta" %}
+	<script type="text/javascript">
+		alert("Contraseña incorrecta");
+	</script>
+{% endif %}
+
 <body>
 	<video id="video" autoplay="autoplay" loop="loop" preload="auto">
   		<source src="../static/stand_video.ogv" type="video/ogg"></source>
@@ -30,7 +41,7 @@
 		<hr  width="100%" noshade>
 		<div style="float:left; width: 50%;">
 			<form form_action="" method="post">
-				<input type="submit" name="boton" style="background-color: #48DCEE; width: 90%;" value="Registrarse">
+				<input type="submit" name="boton" style="background-color: #48DCEE; width: 90%;" value="Registro">
 			</form>
 		</div>
 		<div style="float:left; width: 50%; text-align: center;">

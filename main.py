@@ -8,17 +8,25 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    error = None
     if request.method == 'POST':
         if request.form['boton'] == "Contraseña":
             return redirect(url_for('forget'))
-        elif request.form['boton'] == "Registrarse":
+        elif request.form['boton'] == "Registro":
             return redirect(url_for('sign_up'))
         elif request.form['boton'] == "Entrar":
             usr = request.form['usuario']
             pswd = request.form['password']
             if(sqlite.validarUsuario(usr)):
-                print("Accediendo")
-                return redirect(url_for('monopoly'))
+                if sqlite.verificarContraseña(usr, pswd):
+                    return redirect(url_for('monopoly'))
+                else:
+                    error = "pswdIncorrecta"
+                    return render_template('index.html', error=error)
+            else:
+                error = "usuario!exist"
+                return render_template('index.html', error=error)
+            
     else:
         return render_template('index.html')
     
@@ -27,13 +35,14 @@ def forget():
     if request.method == 'POST':
         if request.form['boton'] == "Iniciar sesión":
             return redirect(url_for('index'))
-        elif request.form['boton'] == "Registrarse":
+        elif request.form['boton'] == "Registro":
             return redirect(url_for('sign_up'))
     else:
         return render_template('forget.html')
 
 @app.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
+    error = None
     if request.method == 'POST':
         if request.form['boton'] == "Iniciar sesión":
             return redirect(url_for('index'))
@@ -43,22 +52,19 @@ def sign_up():
             usr = request.form['usuario']
             pswd = request.form['password']
             email = request.form['email']
+            if sqlite.validarUsuario(usr):
+                error = "usuarioExist"
+                return render_template('sign_up.html', error=error)
             sqlite.añadirUsuario(usr, pswd, email)
+            error = "usuarioCreado"
             return redirect(url_for('index'))
     else:
         return render_template('sign_up.html')
-    """
-    if request.method == 'POST':
-        if request.form['boton'] == "Registrarse":
-            usuario=request.form['usuario']
-            correo=request.form['email']
-            contraseña=request.form['password']
-            print(usuario)
-            return redirect(url_for('pagina_principal'))
-    """
+    
 
 def monopoly():
     return render_template('monopoly.html')
+
     
 if __name__ == '__main__':
     app.run(port=8080)

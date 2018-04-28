@@ -28,6 +28,15 @@ def validarUsuario(usrName):
             return True
     return False
 
+def verificarContraseña(usrName, pswd):
+    cursor.execute("SELECT password FROM users WHERE username=?", (usrName,))
+    registro = cursor.fetchone()
+    if(pswd==registro[0]):
+        return True
+    else:
+        return False
+
+
 def añadirUsuario(usrName, pswd, email):
     """
     Descripcion: Funcion encargada de añadir el usuario a la tabla.
@@ -56,7 +65,7 @@ def cambiarPass(usrName, pswd, newPswd):
     Entradas: Nombre de usuario, contraseña, nueva contraseña.
     Salida: Cambios en la tabla.
     """
-    par=(usrName)
+    par = usrName
     cursor.execute("SELECT password FROM users WHERE username=?", par)
     registro = cursor.fetchone()
     if(pswd==registro[0]):
