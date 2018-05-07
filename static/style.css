@@ -86,6 +86,16 @@ video {
 	vertical-align: middle;
 }
 
+.tablero{
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: fixed;    
+  top: 50%;
+  left: 50%;
+}
+
 .in_line{
 	display: inline-block;
 }

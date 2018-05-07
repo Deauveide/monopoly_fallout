@@ -5,9 +5,12 @@ from flask import json
 
 # Inicializacion de variables
 app = Flask(__name__)
+global inicioSesion
+inicioSesion=False
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    global inicioSesion
     error = None
     if request.method == 'POST':
         if request.form['boton'] == "Contraseña":
@@ -19,6 +22,7 @@ def index():
             pswd = request.form['password']
             if(sqlite.validarUsuario(usr)):
                 if sqlite.verificarContraseña(usr, pswd):
+                    inicioSesion=True
                     return redirect(url_for('monopoly'))
                 else:
                     error = "pswdIncorrecta"
@@ -60,10 +64,14 @@ def sign_up():
             return redirect(url_for('index'))
     else:
         return render_template('sign_up.html')
-    
 
+@app.route('/monopoly', methods=['GET', 'POST'])
 def monopoly():
-    return render_template('monopoly.html')
+    global inicioSesion
+    if inicioSesion:
+        return render_template('monopoly.html')
+    else:
+        return redirect(url_for('index'))
 
     
 if __name__ == '__main__':
