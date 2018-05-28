@@ -1,11 +1,11 @@
 from flask import Flask, request, g, redirect, url_for, render_template, flash, session
 import flask
 import sqlite
-from flask import json
+import random
 
 # Inicializacion de variables
 app = Flask(__name__)
-global inicioSesion, tablero
+global inicioSesion, tablero, turno
 inicioSesion=False
 
 tablero = [["","","","","","","","","","",""],
@@ -19,6 +19,7 @@ tablero = [["","","","","","","","","","",""],
            ["","","","","","","","","","",""],
            ["","","","","","","","","","",""],
            ["","","","","","","","","","","C"]]
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -80,13 +81,71 @@ def sign_up():
 
 @app.route('/monopoly', methods=['GET', 'POST'])
 def monopoly():
-    global inicioSesion, tablero
+    global inicioSesion, tablero, turno
     entries = {"tablero": tablero}
+    dados=0
     if inicioSesion:
-        return render_template('monopoly.html', entries=entries)
+        turno=1
+        if(request.method == "POST"):
+                if(request.form["boton"]=="Mover"):
+                    dado1=random.randint(1,6)
+                    dado2=random.randint(1,6)
+                    moverFicha("A", dado1+dado2)
+                    entries["tablero"]=tablero
+                    entries["dados"]=[]
+                    return render_template('monopoly.html', entries=entries)
+        else:
+            return render_template('monopoly.html', entries=entries)
     else:
-
         return redirect(url_for('index'))
+
+def moverFicha(jug, cant):
+    """
+    Descripcion: Funcion que mueve las ficha recibida la cantidad de espacios que se pide
+    Entrada: Jugador a mover y cantidad de espacios
+    Salida: Tabla con el jugador movido
+    """
+    global tablero
+    cont=0
+    cont2=0
+    posx=0
+    posy=0
+    for i in tablero:
+        cont2=0
+        for j in i:
+            if(tablero[cont][cont2]==jug or tablero[cont][cont2]=="C"):
+                posx=cont
+                posy=cont2
+            cont2+=1
+        cont+=1
+    if(posx==10):
+        if(posy-cant>=0):
+
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[posx][posy-cant]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[posx][posy-cant]=jug
+            else:
+                tablero[posx][posy]=""
+                tablero[posx][posy-cant]=jug
+        else:
+            mov=(posy-cant)
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[posx+mov][0]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[posx+mov][0]=jug
+            else:
+                tablero[posx][posy]=""
+                tablero[posx+mov][0]=jug
+
+
+
 
     
 if __name__ == '__main__':
