@@ -89,3 +89,17 @@ video {
 .in_line{
 	display: inline-block;
 }
+
+.board{
+  background-image: url("../static/tablero.jpg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.tabla{
+  width: 50%;
+}
+
+td{
+  text-align: center;
+}

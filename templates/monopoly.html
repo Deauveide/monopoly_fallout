@@ -6,9 +6,440 @@
 	<link rel="stylesheet" type="text/css" href="../static/style.css">
 	<title>Falloutpoly</title>
 </head>
-<body style="padding-top: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; margin: 0;">
-	<div style="text-align: center;">
-		<img style="height: 99vh;" src="../static/tablero.jpg">
+<body style="padding-top: 0; padding-bottom: 0; padding-left: 0; padding-right: 0; margin: 0;" class="board">
+	{% block body %}
+	<div style="display: flex;">
+		<table border="1" class="tabla">
+			<tbody>
+				<tr>
+				<td width="15%" height="86">
+					{% if entries.tablero[0][0] == "A" or entries.tablero[0][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][0] == "B" or entries.tablero[0][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][1] == "A" or entries.tablero[0][1] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][1] == "B" or entries.tablero[0][1] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][2] == "A" or entries.tablero[0][2] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][2] == "B" or entries.tablero[0][2] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][3] == "A" or entries.tablero[0][3] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][3] == "B" or entries.tablero[0][3] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][4] == "A" or entries.tablero[0][4] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][4] == "B" or entries.tablero[0][4] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][5] == "A" or entries.tablero[0][5] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][5] == "B" or entries.tablero[0][5] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][6] == "A" or entries.tablero[0][6] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][6] == "B" or entries.tablero[0][6] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][7] == "A" or entries.tablero[0][7] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][7] == "B" or entries.tablero[0][7] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][8] == "A" or entries.tablero[0][8] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][8] == "B" or entries.tablero[0][8] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[0][9] == "A" or entries.tablero[0][9] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][9] == "B" or entries.tablero[0][9] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td width="15%">
+					{% if entries.tablero[0][10] == "A" or entries.tablero[0][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[0][10] == "B" or entries.tablero[0][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[1][0] == "A" or entries.tablero[1][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[1][0] == "B" or entries.tablero[1][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[1][10] == "A" or entries.tablero[1][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[1][10] == "B" or entries.tablero[1][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[2][0] == "A" or entries.tablero[2][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[2][0] == "B" or entries.tablero[2][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[2][10] == "A" or entries.tablero[2][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[2][10] == "B" or entries.tablero[2][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[3][0] == "A" or entries.tablero[3][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[3][0] == "B" or entries.tablero[3][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[3][10] == "A" or entries.tablero[3][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[3][10] == "B" or entries.tablero[3][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[4][0] == "A" or entries.tablero[4][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[4][0] == "B" or entries.tablero[4][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[4][10] == "A" or entries.tablero[4][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[4][10] == "B" or entries.tablero[4][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[5][0] == "A" or entries.tablero[5][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[5][0] == "B" or entries.tablero[5][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[5][10] == "A" or entries.tablero[5][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[5][10] == "B" or entries.tablero[5][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[6][0] == "A" or entries.tablero[6][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[6][0] == "B" or entries.tablero[6][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[6][10] == "A" or entries.tablero[6][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[6][10] == "B" or entries.tablero[6][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[7][0] == "A" or entries.tablero[7][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[7][0] == "B" or entries.tablero[7][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[7][10] == "A" or entries.tablero[7][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[7][10] == "B" or entries.tablero[7][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[8][0] == "A" or entries.tablero[8][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[8][0] == "B" or entries.tablero[8][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[8][10] == "A" or entries.tablero[8][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[8][10] == "B" or entries.tablero[8][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="45">
+					{% if entries.tablero[9][0] == "A" or entries.tablero[9][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[9][0] == "B" or entries.tablero[9][0] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>
+					{% if entries.tablero[9][10] == "A" or entries.tablero[9][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[9][10] == "B" or entries.tablero[9][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+				<tr>
+				<td height="88">
+					{% if entries.tablero[10][0] == "A" or entries.tablero[10][0] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][0] == "B" or entries.tablero[10][0]%}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][1] == "A" or entries.tablero[10][1] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][1] == "B" or entries.tablero[10][1] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][2] == "A" or entries.tablero[10][2] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][2] == "B" or entries.tablero[10][2] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][3] == "A" or entries.tablero[10][3] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][3] == "B" or entries.tablero[10][3] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][4] == "A" or entries.tablero[10][4] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][4] == "B" or entries.tablero[10][4] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][5] == "A" or entries.tablero[10][5] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][5] == "B" or entries.tablero[10][5] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][6] == "A" or entries.tablero[10][6] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][6] == "B" or entries.tablero[10][6] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][7] == "A" or entries.tablero[10][7] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][7] == "B" or entries.tablero[10][7] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][8] == "A" or entries.tablero[10][8] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][8] == "B" or entries.tablero[10][8] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][9] == "A" or entries.tablero[10][9] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][9] == "B" or entries.tablero[10][9] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				<td>
+					{% if entries.tablero[10][10] == "A" or entries.tablero[10][10] == "C"%}
+						<input type="image" value="pos1010" src="../static/ficha.png" width="40%" alt="submit">
+					{% endif %}
+					{% if entries.tablero[10][10] == "B" or entries.tablero[10][10] %}
+						<input type="image" value="pos1010" src="../static/vaultboy.png" width="40%" alt="submit">
+					{% endif %}
+				</td>
+				</tr>
+			</tbody>
+		</table>
+		<form method="post" style="padding-left: 3%">
+			<input type="submit" name="btn" value="Mover">
+		</form>
 	</div>
+	{% endblock %}
 </body>
 </html>

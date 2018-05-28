@@ -5,8 +5,21 @@ from flask import json
 
 # Inicializacion de variables
 app = Flask(__name__)
-global inicioSesion
+global inicioSesion, tablero
 inicioSesion=False
+
+tablero = [["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","",""],
+           ["","","","","","","","","","","C"]]
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -67,10 +80,12 @@ def sign_up():
 
 @app.route('/monopoly', methods=['GET', 'POST'])
 def monopoly():
-    global inicioSesion
+    global inicioSesion, tablero
+    entries = {"tablero": tablero}
     if inicioSesion:
-        return render_template('monopoly.html')
+        return render_template('monopoly.html', entries=entries)
     else:
+
         return redirect(url_for('index'))
 
     
