@@ -20,6 +20,11 @@
 		alert("No se ha logeado");
 	</script>
 {% endif %}
+{% if error == "sala_llena" %}
+	<script type="text/javascript">
+		alert("La sala esta llena");
+	</script>
+{% endif %}
 
 <body>
 	<video id="video" autoplay="autoplay" loop="loop" preload="auto">

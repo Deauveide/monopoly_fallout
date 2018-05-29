@@ -7,6 +7,7 @@ import random
 app = Flask(__name__)
 global inicioSesion, tablero, turno
 inicioSesion=False
+turno=1
 
 tablero = [["","","","","","","","","","",""],
            ["","","","","","","","","","",""],
@@ -22,7 +23,7 @@ tablero = [["","","","","","","","","","",""],
 
 infoCasillas={
     0:{
-    "pos": [10][10],
+    "pos": [10,10],
     "nombre": "Go",
     "valor": 200,
     "propiedad": False,
@@ -31,7 +32,7 @@ infoCasillas={
     },
 
     1:{
-    "pos": [10][9],
+    "pos": [10,9],
     "nombre": "Camp Searchlight",
     "valor" : -60,
     "propiedad": True,
@@ -39,259 +40,325 @@ infoCasillas={
     "dueño": ""
     },
     2:{
-    "pos": [10][8],
+    "pos": [10,8],
     "nombre": "Lockpick",
     "valor": 0,
     "propiedad": False,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     3:{
-    "pos": [10][7],
+    "pos": [10,7],
     "nombre": "Vault 22",
     "valor": -60,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     4:{
-    "pos": [10][6],
+    "pos": [10,6],
     "nombre": "NCR Tax",
     "valor": -200,
     "propiedad": False,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     5:{
-    "pos": [10][5],
+    "pos": [10,5],
     "nombre": "South Monorail",
     "valor": -200,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     6:{
-    "pos": [10][4],
+    "pos": [10,4],
     "nombre": "Nipton",
     "valor": -100,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     7:{
-    "pos": [10][3],
+    "pos": [10,3],
     "nombre": "Luck",
     "valor": 0,
     "propiedad": False,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     8:{
-    "pos": [10][2],
+    "pos": [10,2],
     "nombre": "Boulder city",
     "valor": -100,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     9:{
-    "pos": [10][1],
+    "pos": [10,1],
     "nombre": "Sloan",
     "valor": -120,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     10:{
-    "pos": [10][0],
+    "pos": [10,0],
     "nombre": "Visit jail",
     "valor": 0,
     "propiedad": False,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     11:{
-    "pos": [9][0],
+    "pos": [9,0],
     "nombre": "Goodsprings",
     "valor": -140,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     12:{
-    "pos": [8][0],
+    "pos": [8,0],
     "nombre": "Primm",
     "valor": -140,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     13:{
-    "pos": [7][0],
+    "pos": [7,0],
     "nombre": "Poseidon",
     "valor": -150,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     14:{
-    "pos": [6][0],
+    "pos": [6,0],
     "nombre": "Freeside",
     "valor": -160,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     15:{
-    "pos": [5][0],
+    "pos": [5,0],
     "nombre": "West Monorail",
     "valor": -200,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     16:{
-    "pos": [4][0],
+    "pos": [4,0],
     "nombre": "Novac",
     "valor": -180,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     17:{
-    "pos": [3][0],
+    "pos": [3,0],
     "nombre": "Trading post",
     "valor": -180,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     18:{
-    "pos": [2][0],
+    "pos": [2,0],
     "nombre": "Lockpick",
     "valor": 0,
     "propiedad": False,
     "cantCasas": 0,
     "dueño": ""
-    }
+    },
     19:{
-    "pos": [1][0],
+    "pos": [1,0],
     "nombre": "Sarsaparrilla",
     "valor": -200,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
+    },
+    20:{
+    "pos": [0,0],
+    "nombre": "Sleep",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    21:{
+    "pos": [0,1],
+    "nombre": "Mojave outpost",
+    "valor": -220,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    22:{
+    "pos": [0,2],
+    "nombre": "Luck",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    23:{
+    "pos": [0,3],
+    "nombre": "Heilds one",
+    "valor": -220,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    24:{
+    "pos": [0,4],
+    "nombre": "Repconn",
+    "valor": -240,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    25:{
+    "pos": [0,5],
+    "nombre": "North Monorail",
     "valor": -200,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
+    },
+    26:{
+    "pos": [0,6],
+    "nombre": "Hidden valley",
+    "valor": -260,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    27:{
+    "pos": [0,7],
+    "nombre": "Jacob's town",
+    "valor": -260,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    28:{
+    "pos": [0,8],
+    "nombre": "Lake mead",
+    "valor": -150,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    29:{
+    "pos": [0,9],
+    "nombre": "Gun runners",
+    "valor": -280,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    30:{
+    "pos": [0,10],
+    "nombre": "Jail",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    31:{
+    "pos": [1,10],
+    "nombre": "Nellis",
+    "valor": -300,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    32:{
+    "pos": [2,10],
+    "nombre": "The fort",
+    "valor": -300,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    33:{
+    "pos": [3,10],
+    "nombre": "Lockpick",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    34:{
+    "pos": [4,10],
+    "nombre": "Camp Mccarran",
+    "valor": -320,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    35:{
+    "pos": [5,10],
+    "nombre": "East Monorail",
     "valor": -200,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
+    },
+    36:{
+    "pos": [6,10],
+    "nombre": "Luck",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    37:{
+    "pos": [7,10],
+    "nombre": "Hoover dam",
+    "valor": -350,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
+    },
+    38:{
+    "pos": [8,10],
+    "nombre": "Credit check",
+    "valor": -75,
+    "propiedad": False,
     "cantCasas": 0,
     "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
-    "propiedad": True,
-    "cantCasas": 0,
-    "dueño": ""
-    }
-    19:{
-    "pos": [1][0],
-    "nombre": "Sarsaparrilla",
-    "valor": -200,
+    },
+    39:{
+    "pos": [9,10],
+    "nombre": "The strip",
+    "valor": -400,
     "propiedad": True,
     "cantCasas": 0,
     "dueño": ""
     }
 }
-
+global jugador, jugador2
+jugador={
+    "usrname": "",
+    "dinero": 0,
+    "nJugador": ""
+}
+jugador2={
+    "usrname": "",
+    "dinero": 0,
+    "nJugador": ""
+}
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    global inicioSesion
+    global inicioSesion, jugador, jugador2
     error = None
     if request.method == 'POST':
         if request.form['boton'] == "Contraseña":
@@ -304,6 +371,15 @@ def index():
             if(sqlite.validarUsuario(usr)):
                 if sqlite.verificarContraseña(usr, pswd):
                     inicioSesion=True
+                    if(jugador["usrname"] == ""):
+                        jugador["usrname"]=usr
+                        jugador["nJugador"]="A"
+                    elif(jugador2["usrname"] == ""):
+                        jugador2["usrname"]=usr
+                        jugador2["nJugador"]="B"
+                    else:
+                        error="sala_llena"
+                        return render_template('index.html', error=error)
                     return redirect(url_for('monopoly'))
                 else:
                     error = "pswdIncorrecta"
@@ -348,19 +424,29 @@ def sign_up():
 
 @app.route('/monopoly', methods=['GET', 'POST'])
 def monopoly():
-    global inicioSesion, tablero, turno
-    entries = {"tablero": tablero, "dados" : [0,0]}
+    global inicioSesion, tablero, jugador, turno
+    entries = {"tablero": tablero, "dados" : [0,0], "turno": turno}
     dados=0
     if inicioSesion:
-        turno=1
         if(request.method == "POST"):
                 if(request.form["boton"]=="Mover"):
-                    dado1=random.randint(1,5)
-                    dado2=random.randint(1,5)
-                    moverFicha("A", dado1+dado2)
-                    entries["tablero"]=tablero
-                    entries["dados"]=[dado1, dado2]
-                    return render_template('monopoly.html', entries=entries)
+                    if(turno==1):
+                        turno=2
+                        dado1=random.randint(1,5)
+                        dado2=random.randint(1,5)
+                        moverFicha("A", dado1+dado2)
+                        entries["tablero"]=tablero
+                        entries["dados"]=[dado1, dado2]
+                    elif(turno==2):
+                        turno=1
+                        dado1=random.randint(1,5)
+                        dado2=random.randint(1,5)
+                        moverFicha("B", dado1+dado2)
+                        entries["tablero"]=tablero
+                        entries["dados"]=[dado1, dado2]
+
+
+                    return render_template('monopoly.html', entries=entries, jugador=jugador)
         else:
             return render_template('monopoly.html', entries=entries)
     else:
