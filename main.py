@@ -20,6 +20,273 @@ tablero = [["","","","","","","","","","",""],
            ["","","","","","","","","","",""],
            ["","","","","","","","","","","C"]]
 
+infoCasillas={
+    0:{
+    "pos": [10][10],
+    "nombre": "Go",
+    "valor": 200,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+
+    1:{
+    "pos": [10][9],
+    "nombre": "Camp Searchlight",
+    "valor" : -60,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    },
+    2:{
+    "pos": [10][8],
+    "nombre": "Lockpick",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    3:{
+    "pos": [10][7],
+    "nombre": "Vault 22",
+    "valor": -60,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    4:{
+    "pos": [10][6],
+    "nombre": "NCR Tax",
+    "valor": -200,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    5:{
+    "pos": [10][5],
+    "nombre": "South Monorail",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    6:{
+    "pos": [10][4],
+    "nombre": "Nipton",
+    "valor": -100,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    7:{
+    "pos": [10][3],
+    "nombre": "Luck",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    8:{
+    "pos": [10][2],
+    "nombre": "Boulder city",
+    "valor": -100,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    9:{
+    "pos": [10][1],
+    "nombre": "Sloan",
+    "valor": -120,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    10:{
+    "pos": [10][0],
+    "nombre": "Visit jail",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    11:{
+    "pos": [9][0],
+    "nombre": "Goodsprings",
+    "valor": -140,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    12:{
+    "pos": [8][0],
+    "nombre": "Primm",
+    "valor": -140,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    13:{
+    "pos": [7][0],
+    "nombre": "Poseidon",
+    "valor": -150,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    14:{
+    "pos": [6][0],
+    "nombre": "Freeside",
+    "valor": -160,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    15:{
+    "pos": [5][0],
+    "nombre": "West Monorail",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    16:{
+    "pos": [4][0],
+    "nombre": "Novac",
+    "valor": -180,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    17:{
+    "pos": [3][0],
+    "nombre": "Trading post",
+    "valor": -180,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    18:{
+    "pos": [2][0],
+    "nombre": "Lockpick",
+    "valor": 0,
+    "propiedad": False,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+    19:{
+    "pos": [1][0],
+    "nombre": "Sarsaparrilla",
+    "valor": -200,
+    "propiedad": True,
+    "cantCasas": 0,
+    "dueño": ""
+    }
+}
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -82,17 +349,17 @@ def sign_up():
 @app.route('/monopoly', methods=['GET', 'POST'])
 def monopoly():
     global inicioSesion, tablero, turno
-    entries = {"tablero": tablero}
+    entries = {"tablero": tablero, "dados" : [0,0]}
     dados=0
     if inicioSesion:
         turno=1
         if(request.method == "POST"):
                 if(request.form["boton"]=="Mover"):
-                    dado1=random.randint(1,6)
-                    dado2=random.randint(1,6)
+                    dado1=random.randint(1,5)
+                    dado2=random.randint(1,5)
                     moverFicha("A", dado1+dado2)
                     entries["tablero"]=tablero
-                    entries["dados"]=[]
+                    entries["dados"]=[dado1, dado2]
                     return render_template('monopoly.html', entries=entries)
         else:
             return render_template('monopoly.html', entries=entries)
@@ -120,7 +387,6 @@ def moverFicha(jug, cant):
         cont+=1
     if(posx==10):
         if(posy-cant>=0):
-
             if(tablero[posx][posy]=="C"):
                 if(jug=="A"):
                     tablero[posx][posy]="B"
@@ -129,8 +395,12 @@ def moverFicha(jug, cant):
                     tablero[posx][posy]="A"
                     tablero[posx][posy-cant]=jug
             else:
-                tablero[posx][posy]=""
-                tablero[posx][posy-cant]=jug
+                if(tablero[posx][posy-cant]=="A" or tablero[posx][posy-cant]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[posx][posy-cant]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[posx][posy-cant]=jug
         else:
             mov=(posy-cant)
             if(tablero[posx][posy]=="C"):
@@ -141,8 +411,110 @@ def moverFicha(jug, cant):
                     tablero[posx][posy]="A"
                     tablero[posx+mov][0]=jug
             else:
-                tablero[posx][posy]=""
-                tablero[posx+mov][0]=jug
+                if(tablero[posx+mov][0]=="A" or tablero[posx+mov][0]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[posx+mov][0]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[posx+mov][0]=jug
+
+    elif(posy==0):
+        if(posx-cant>=0):
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[posx-cant][0]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[posx-cant][0]=jug
+            else:
+                if(tablero[posx][posy-cant]=="A" or tablero[posx][posy-cant]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[posx-cant][0]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[posx-cant][0]=jug
+        else:
+            mov=abs(posx-cant)
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[0][mov]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[0][mov]=jug
+            else:
+                if(tablero[0][mov]=="A" or tablero[0][mov]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[0][mov]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[0][mov]=jug
+    elif(posx==0):
+        if(posy+cant<=10):
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[posx][posy+cant]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[posx][posy+cant]=jug
+            else:
+                if(tablero[posx][posy-cant]=="A" or tablero[posx][posy-cant]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[posx][posy+cant]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[posx][posy+cant]=jug
+        else:
+            mov=posy+cant-10
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[mov][10]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[mov][10]=jug
+            else:
+                if(tablero[mov][10]=="A" or tablero[mov][10]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[mov][10]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[mov][10]=jug
+    elif(posy==10):
+        if(posx+cant<=10):
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[posx+cant][posy]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[posx+cant][posy]=jug
+            else:
+                if(tablero[posx+cant][posy]=="A" or tablero[posx+cant][posy]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[posx+cant][posy]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[posx+cant][posy]=jug
+        else:
+            mov=posx+cant-10
+            if(tablero[posx][posy]=="C"):
+                if(jug=="A"):
+                    tablero[posx][posy]="B"
+                    tablero[10][10-mov]=jug
+                elif(jug=="B"):
+                    tablero[posx][posy]="A"
+                    tablero[10][10-mov]=jug
+            else:
+                if(tablero[10][10-mov]=="A" or tablero[10][10-mov]=="B"):
+                    tablero[posx][posy]=""
+                    tablero[10][10-mov]="C"
+                else:
+                    tablero[posx][posy]=""
+                    tablero[10][10-mov]=jug
+
 
 
 
