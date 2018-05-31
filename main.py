@@ -1,10 +1,11 @@
-from flask import Flask, request, g, redirect, url_for, render_template, flash, session
+from flask import Flask, request, redirect, url_for, render_template, session
 import flask
 import sqlite
 import random
 
 # Inicializacion de variables
 app = Flask(__name__)
+app.secret_key = ".unamuymuysecretasecreta."
 global inicioSesion, tablero, turno
 inicioSesion=False
 turno=1
@@ -20,6 +21,9 @@ tablero = [["","","","","","","","","","",""],
            ["","","","","","","","","","",""],
            ["","","","","","","","","","",""],
            ["","","","","","","","","","","C"]]
+
+
+global jugador, jugador2, infoCasillas
 
 infoCasillas={
     0:{
@@ -344,21 +348,22 @@ infoCasillas={
     "dueño": ""
     }
 }
-global jugador, jugador2
+
 jugador={
     "usrname": "",
-    "dinero": 0,
+    "dinero": 2000,
     "nJugador": ""
 }
 jugador2={
     "usrname": "",
-    "dinero": 0,
+    "dinero": 2000,
     "nJugador": ""
 }
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global inicioSesion, jugador, jugador2
+    session["jug"]=""
     error = None
     if request.method == 'POST':
         if request.form['boton'] == "Contraseña":
@@ -374,13 +379,15 @@ def index():
                     if(jugador["usrname"] == ""):
                         jugador["usrname"]=usr
                         jugador["nJugador"]="A"
+                        session["jug"]="A"
                     elif(jugador2["usrname"] == ""):
                         jugador2["usrname"]=usr
                         jugador2["nJugador"]="B"
+                        session["jug"]="B"
                     else:
                         error="sala_llena"
                         return render_template('index.html', error=error)
-                    return redirect(url_for('monopoly'))
+                    return redirect(url_for('monopoly'), session["jug"])
                 else:
                     error = "pswdIncorrecta"
                     return render_template('index.html', error=error)
@@ -424,12 +431,15 @@ def sign_up():
 
 @app.route('/monopoly', methods=['GET', 'POST'])
 def monopoly():
-    global inicioSesion, tablero, jugador, turno
+    global inicioSesion, tablero, jugador, turno, jugador2, infoCasillas
     entries = {"tablero": tablero, "dados" : [0,0], "turno": turno}
     dados=0
+    dado1=0
+    dado2=0
     if inicioSesion:
+
         if(request.method == "POST"):
-                if(request.form["boton"]=="Mover"):
+                if(request.form["boton"]=="Mover J1"):
                     if(turno==1):
                         turno=2
                         dado1=random.randint(1,5)
@@ -437,7 +447,33 @@ def monopoly():
                         moverFicha("A", dado1+dado2)
                         entries["tablero"]=tablero
                         entries["dados"]=[dado1, dado2]
-                    elif(turno==2):
+                        cont=0
+                        cont2=0
+                        for i in tablero:
+                            cont2=0
+                            for j in i:
+                                if(tablero[cont][cont2]=="A" or tablero[cont][cont2]=="C"):
+                                    break
+                                cont2+=1
+                            cont+=1
+                        n=0
+                        for i in infoCasillas:
+                            if(infoCasillas[i]["pos"]==[cont, cont2]):
+                                n=i
+                        n=n+dado1+dado2
+                        if(infoCasillas[n]["dueño"]=="" and infoCasillas[n]["propiedad"]):
+                            infoCasillas[n]["dueño"]="A"
+                            jugador["dinero"]=jugador["dinero"]+infoCasillas[n]["valor"]
+                            print(infoCasillas[n]["dueño"])
+                        elif(infoCasillas[n]["dueño"]=="B"):
+                            jugador["dinero"]=jugador["dinero"]-infoCasillas[n]["valor"]
+
+                    else:
+                        entries["tablero"]=tablero
+                        entries["dados"]=[dado1, dado2]
+                        entries["turno"]=turno
+                elif(request.form["boton"]=="Mover J2"):
+                    if(turno==2):
                         turno=1
                         dado1=random.randint(1,5)
                         dado2=random.randint(1,5)
@@ -445,12 +481,38 @@ def monopoly():
                         entries["tablero"]=tablero
                         entries["dados"]=[dado1, dado2]
 
+                        cont=0
+                        cont2=0
+                        for i in tablero:
+                            cont2=0
+                            for j in i:
+                                if(tablero[cont][cont2]=="B" or tablero[cont][cont2]=="C"):
+                                    break
+                                cont2+=1
+                            cont+=1
+                        n=0
+                        for i in infoCasillas:
+                            if(infoCasillas[i]["pos"]==[cont, cont2]):
+                                n=i
+                        n=n+dado1+dado2
+                        if(infoCasillas[n]["dueño"]=="" and infoCasillas[n]["propiedad"]):
+                            infoCasillas[n]["dueño"]="B"
+                            jugador["dinero"]=jugador["dinero"]+infoCasillas[n]["valor"]
+                            print(infoCasillas[n]["dueño"])
+                        elif(infoCasillas[n]["dueño"]=="A"):
+                            jugador["dinero"]=jugador["dinero"]-infoCasillas[n]["valor"]
+                    else:
+                        entries["tablero"]=tablero
+                        entries["dados"]=[dado1, dado2]
+                        entries["turno"]=turno
 
-                    return render_template('monopoly.html', entries=entries, jugador=jugador)
+
+                return render_template('monopoly.html', entries=entries, jugador=jugador, jugador2=jugador2)
         else:
-            return render_template('monopoly.html', entries=entries)
+            return render_template('monopoly.html', entries=entries, jugador=jugador, jugador2=jugador2)
     else:
         return redirect(url_for('index'))
+
 
 def moverFicha(jug, cant):
     """

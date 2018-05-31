@@ -436,13 +436,31 @@
 				</tr>
 			</tbody>
 		</table>
+
 		<form method="post" style="padding-left: 3%">
-			<input type="submit" name="boton" value="Mover">
+
+			{% if session["jug"] == "A" %}
+				<p>Usuario: {{ jugador["usrname"] }}</p>
+				<p>Dinero: {{ jugador["dinero"] }}</p>
+				<p>Dado 1: {{ entries.dados["dado1"] }}</p>
+				<p>Dado 2: {{ entries.dados["dado2"] }}</p>
+				{% if entries.turno == 1 %}
+					<input type="submit" name="boton" value="Mover J1">
+				{% elif entries.turno == 2 %}
+					<input type="submit" name="boton" value="Mover J1" disabled>
+				{% endif %}
+			{% elif session["jug"] == "B" %}
+				<p>Usuario: {{ jugador2["usrname"] }}</p>
+				<p>Dinero: {{ jugador2["dinero"] }}</p>
+				{% if entries.turno == 1 %}
+					<input type="submit" name="boton" value="Mover J2" disabled>
+				{% elif entries.turno == 2 %}
+					<input type="submit" name="boton" value="Mover J2">
+				{% endif %}
+			{% endif %}
+						
+
 		</form>
-		<p>Dado 1: </p>
-		<p> {{ entries.dados[0] }} </p>
-		<p>Dado 2: </p>
-		<p> {{ entries.dados[1] }} </p>
 	</div>
 	{% endblock %}
 </body>
