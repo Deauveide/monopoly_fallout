@@ -6,7 +6,7 @@ import random
 # Inicializacion de variables
 app = Flask(__name__)
 app.secret_key = ".unamuymuysecretasecreta."
-global inicioSesion, tablero, turno
+global inicioSesion, tablero, turno, jugador, jugador2, infoCasillas
 inicioSesion=False
 turno=1
 
@@ -22,8 +22,6 @@ tablero = [["","","","","","","","","","",""],
            ["","","","","","","","","","",""],
            ["","","","","","","","","","","C"]]
 
-
-global jugador, jugador2, infoCasillas
 
 infoCasillas={
     0:{
@@ -507,9 +505,9 @@ def monopoly():
                         entries["turno"]=turno
 
 
-                return render_template('monopoly.html', entries=entries, jugador=jugador, jugador2=jugador2)
+                return render_template('monopoly.html', entries=entries, jugador=jugador, jugador2=jugador2, infoCasillas=infoCasillas)
         else:
-            return render_template('monopoly.html', entries=entries, jugador=jugador, jugador2=jugador2)
+            return render_template('monopoly.html', entries=entries, jugador=jugador, jugador2=jugador2, infoCasillas=infoCasillas)
     else:
         return redirect(url_for('index'))
 

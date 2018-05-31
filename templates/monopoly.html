@@ -452,6 +452,8 @@
 			{% elif session["jug"] == "B" %}
 				<p>Usuario: {{ jugador2["usrname"] }}</p>
 				<p>Dinero: {{ jugador2["dinero"] }}</p>
+				<p>Dado 1: {{ entries.dados["dado1"] }}</p>
+				<p>Dado 2: {{ entries.dados["dado2"] }}</p>
 				{% if entries.turno == 1 %}
 					<input type="submit" name="boton" value="Mover J2" disabled>
 				{% elif entries.turno == 2 %}
